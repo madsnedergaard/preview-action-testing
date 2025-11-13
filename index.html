@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="theme-color" content="" />
+        <link rel="shortcut icon" href="" />
+        <link rel="stylesheet" href="" />
+        <title>Testing</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+            div {
+                padding: 100px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+            }
+        </style>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const container = document.querySelector('div');
+                const color = `rgba(${Math.floor(Math.random() * 256)}, ${Math.floor(
+                    Math.random() * 256
+                )}, ${Math.floor(Math.random() * 256)}, 0.4)`;
+                container.style.backgroundColor = color;
+            });
+        </script>
+    </head>
+    <body>
+        <div>
+            <h1>Testing</h1>
+        </div>
+    </body>
+</html>
