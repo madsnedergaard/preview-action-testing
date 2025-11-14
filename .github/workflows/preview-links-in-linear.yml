@@ -1,0 +1,31 @@
+name: Preview Links to Linear
+on: [issue_comment, deployment_status]
+
+jobs:
+    preview-in-linear:
+        if: ${{ github.event.issue.pull_request }}
+        name: Preview Links to Linear Issue
+        runs-on: ubuntu-latest
+        env:
+            NODE_OPTIONS: --enable-source-maps
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name: Previews for Vercel
+              uses: madsnedergaard/preview-link-in-linear@main
+              with:
+                  provider: vercel
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  LINEAR_API_KEY: ${{ secrets.LINEAR_API_KEY }}
+            - name: Previews for Netlify
+              uses: madsnedergaard/preview-link-in-linear@main
+              with:
+                  provider: netlify
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  LINEAR_API_KEY: ${{ secrets.LINEAR_API_KEY }}
+            - name: Previews for Cloudflare
+              uses: madsnedergaard/preview-link-in-linear@main
+              with:
+                  provider: cloudflare
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  LINEAR_API_KEY: ${{ secrets.LINEAR_API_KEY }}
