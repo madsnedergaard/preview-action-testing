@@ -11,12 +11,12 @@ jobs:
         steps:
             - name: Checkout
               uses: actions/checkout@v4
-            - name: Previews for Vercel
-              uses: madsnedergaard/preview-link-in-linear@main
-              with:
-                  provider: vercel
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                  LINEAR_API_KEY: ${{ secrets.LINEAR_API_KEY }}
+            # - name: Previews for Vercel
+            #   uses: madsnedergaard/preview-link-in-linear@main
+            #   with:
+            #       provider: vercel
+            #       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            #       LINEAR_API_KEY: ${{ secrets.LINEAR_API_KEY }}
             - name: Previews for Netlify
               uses: madsnedergaard/preview-link-in-linear@main
               with:
@@ -27,5 +27,11 @@ jobs:
               uses: madsnedergaard/preview-link-in-linear@main
               with:
                   provider: cloudflare
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  LINEAR_API_KEY: ${{ secrets.LINEAR_API_KEY }}
+            - name: Previews for Fly.io
+              uses: madsnedergaard/preview-link-in-linear@main
+              with:
+                  provider: fly
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                   LINEAR_API_KEY: ${{ secrets.LINEAR_API_KEY }}
