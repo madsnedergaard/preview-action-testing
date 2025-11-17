@@ -3,7 +3,6 @@ on: [issue_comment, deployment_status]
 
 jobs:
     preview-in-linear:
-        if: ${{ github.event.issue.pull_request }}
         name: Preview Links to Linear Issue
         runs-on: ubuntu-latest
         env:
